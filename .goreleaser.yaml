@@ -62,7 +62,7 @@ archives:
 
 dockers:
   - image_templates:
-      - 0xpolygon/{{ .ProjectName }}:{{ .Version }}-amd64
+      - stefanethernal/{{ .ProjectName }}:{{ .Version }}-amd64
     dockerfile: Dockerfile.release
     use: buildx
     goos: linux
@@ -81,7 +81,7 @@ dockers:
     skip_push: false
 
   - image_templates:
-      - 0xpolygon/{{ .ProjectName }}:{{ .Version }}-arm64
+      - stefanethernal/{{ .ProjectName }}:{{ .Version }}-arm64
     dockerfile: Dockerfile.release
     use: buildx
     goos: linux
@@ -100,14 +100,14 @@ dockers:
     skip_push: false
 
 docker_manifests:
-  - name_template: 0xpolygon/{{ .ProjectName }}:{{ .Version }}
+  - name_template: stefanethernal/{{ .ProjectName }}:{{ .Version }}
     image_templates:
-      - 0xpolygon/{{ .ProjectName }}:{{ .Version }}-amd64
-      - 0xpolygon/{{ .ProjectName }}:{{ .Version }}-arm64
+      - stefanethernal/{{ .ProjectName }}:{{ .Version }}-amd64
+      - stefanethernal/{{ .ProjectName }}:{{ .Version }}-arm64
     skip_push: false
 
-  - name_template: 0xpolygon/{{ .ProjectName }}:latest
+  - name_template: stefanethernal/{{ .ProjectName }}:latest
     image_templates:
-      - 0xpolygon/{{ .ProjectName }}:{{ .Version }}-amd64
-      - 0xpolygon/{{ .ProjectName }}:{{ .Version }}-arm64
+      - stefanethernal/{{ .ProjectName }}:{{ .Version }}-amd64
+      - stefanethernal/{{ .ProjectName }}:{{ .Version }}-arm64
     skip_push: false
